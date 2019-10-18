@@ -12,6 +12,7 @@ import { ItemService } from './item/item.service';
 import { ItemDetailComponent } from './item-detail/item-detail.component';
 import { FormsModule } from '@angular/forms';
 import { ItemImagesComponent } from './item-detail/item-images/item-images.component';
+import { ItemImagesSingleComponent } from './item-detail/item-images/item-images-single/item-images-single.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ItemImagesComponent } from './item-detail/item-images/item-images.compo
     ItemSingleComponent,
     ItemDetailComponent,
     HeadComponent,
-    ItemImagesComponent
+    ItemImagesComponent,
+    ItemImagesSingleComponent
   ],
   imports: [
     BrowserModule,

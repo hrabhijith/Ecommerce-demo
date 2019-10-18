@@ -1,9 +1,9 @@
 <div class="container">
     <div class="row">
-        <div class="col">
-            zkxnvzlxvzlvb
-            <img [src]="items1.extraImages[0]"  class="img-responsive" style="max-height: 40px">
 
-        </div>
+        <app-item-images-single *ngFor="let img of items1.extraImages; let i=index" [imgUrl]="img"
+        [index]="i" (urlEvent)="urlChange($event)">
+
+        </app-item-images-single>
     </div>
 </div>

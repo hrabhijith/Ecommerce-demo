@@ -14,4 +14,8 @@ export class ItemImagesComponent implements OnInit {
   ngOnInit() {
   }
 
+  urlChange(newUrl: string) {
+    this.items1.imagePath = newUrl;
+  }
+
 }
