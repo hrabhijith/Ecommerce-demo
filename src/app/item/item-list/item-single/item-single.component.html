@@ -1,11 +1,15 @@
-<a style="cursor: pointer;" class="list-group-item clearfix" [routerLink]="[index]" routerLinkActive="active">
-    <div class="pull-left">
-        <h4 class="list-group-item-heading">{{items1.name}}</h4>
-        <p class="list-group-item-text">{{items1.description}}</p>
-    </div>
+<div class="col-xs-4">
+    <a routerLinkActive = "active" class="list-group-item clearfix" [routerLink]="[index]" routerLinkActive="active">
+        <div class="pull-left">
+            <h4 class="list-group-item-heading">{{items1.name}}</h4>
+            <p class="list-group-item-text">{{items1.description}}</p>
+            <h6>{{items1.price | currency}}</h6>
+            <br>
+        </div>
 
-    <span class="pull-right">
-        <img src="{{items1.imagePath}}" alt="" class="img-responsive" style="max-height : 50px;">
-    </span>
+        <span class="pull-right">
+            <img src="{{items1.imagePath}}" alt="" class="img-responsive" style="max-height : 50px;">
+        </span>
 
-</a>
+    </a>
+</div>

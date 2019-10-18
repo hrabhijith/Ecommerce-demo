@@ -1,0 +1,26 @@
+.radio-inline {
+    margin-right: 50px;
+    
+}
+.rad {
+    height: 15px;
+}
+
+
+#page2 {
+    margin-right: 100px; 
+    margin-left: auto;
+}
+
+ul {
+    width:500px; 
+    word-break: break-all;
+}
+
+li {
+    display: inline;
+}
+
+a {
+    text-decoration: none;
+}

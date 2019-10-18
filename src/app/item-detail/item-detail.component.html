@@ -1,46 +1,92 @@
-<div class="container">
+<div class="container" id="cover">
     <div class="row">
-        <div class="col-xs-12">
-            <img [src]="inItems.imagePath" alt="{{inItems.name}}" class="img-responsive" style="max-height: 300px">
+        <div class="col-xs-2" style="position: fixed;">
+            <img [src]="inItems.imagePath" alt="{{inItems.name}}" class="img-responsive" style="max-height: 450px">
+            <div class="row">
+                <div class="col-xs-2">
+                    <app-item-images [items1] = "inItems"></app-item-images>
+                </div>
+
+            </div>
         </div>
 
-        <div class="col-xs-12">
-            <h4>Cost: {{inItems.price | currency}}</h4>
-            <br>
-            <p>Total Reviews: {{inItems.reviewCounter}}</p>
+        <div class="col-xs-6" id="page2">
+            <div class="container">
+                <a [routerLink]="'/'">Home</a>
+                <h1>{{inItems.name}}</h1>
+                <h6>Avg Rating: <b>{{inItems.avg}}</b>, <b>{{inItems.ratingCounter}}</b> ratings,
+                    <b>{{inItems.reviewCounter}}</b> reviews</h6>
 
-        </div>
-
-    </div>
-
-    <div class="row">
-        <div class="col-xs-12">
-            <h1>{{inItems.name}}</h1>
-        </div>
-
-    </div>
-    <div class="row">
-        <label><b>Details: </b></label>
-        <br>
-        <div class="col-xs-12">
-            {{inItems.description}}
-        </div>
-
-    </div>
-    <div class="row">
-        <label><b>Reviews by users:</b></label>
-        <br>
-        <div class="col-xs-12">
-
-            <ul class="list-group" *ngFor="let a of inItems.reviews">
-
-                <li class="list-group-item">{{a}}</li>
+                <h4><b>{{inItems.price | currency}}</b></h4>
                 <br>
-            </ul>
-            
+
+                <label><b>Details: </b></label>
+                <br>
+                {{inItems.description}}
+                <br>
+                <br>
+                <label><i>Give a rating below!!</i></label>
+                <br>
+                <form (ngSubmit)="onSubmitRate(f)" #f="ngForm">
+
+                    <label class="radio-inline">1
+                        <input type="radio" name="rate" class="form-control" ngModel value="1" id="rad" required>
+
+                    </label>
+                    <label class="radio-inline">2
+                        <input type="radio" name="rate" class="form-control" ngModel id="rad" value="2">
+                    </label>
+                    <label class="radio-inline">3
+                        <input type="radio" name="rate" class="form-control" ngModel value="3" id="rad">
+
+                    </label>
+                    <label class="radio-inline">4
+                        <input type="radio" name="rate" class="form-control" ngModel id="rad" value="4">
+                    </label>
+                    <label class="radio-inline">5
+                        <input type="radio" name="rate" class="form-control" ngModel id="rad" value="5">
+                    </label>
+                    <br>
+                    <input class="btn btn-primary" [disabled]="!f.valid" type="submit" value="Submit">
+                </form>
+
+
+                <br>
+                <label><b>Reviews by users:</b></label>
+                <br>
+
+                <div>
+                    <ul class="list-group" *ngFor="let a of inItems.reviews">
+                        <li class="list-group-item">
+
+                            <strong>On {{today|date}} a user commented:</strong>
+                            <br>
+                            {{a}}
+
+                        </li>
+
+
+                        <br>
+
+                    </ul>
+                </div>
+
+                <br>
+                <Label for="reviewComment"><b>Leave a review below!</b></Label>
+                <form (ngSubmit)="onSubmitReview(e)" #e="ngForm">
+
+                    <textarea name="review" id="reviewComment" cols="40" rows="5" ngModel required></textarea>
+                    <br>
+                    <br>
+                    <input class="btn btn-primary" [disabled]="!e.valid" type="submit" value="Submit">
+                </form>
+
+            </div>
+
+
+
         </div>
 
-
-
     </div>
+
 </div>

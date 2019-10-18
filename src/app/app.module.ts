@@ -10,6 +10,8 @@ import { ItemSingleComponent } from './item/item-list/item-single/item-single.co
 
 import { ItemService } from './item/item.service';
 import { ItemDetailComponent } from './item-detail/item-detail.component';
+import { FormsModule } from '@angular/forms';
+import { ItemImagesComponent } from './item-detail/item-images/item-images.component';
 
 @NgModule({
   declarations: [
@@ -18,11 +20,13 @@ import { ItemDetailComponent } from './item-detail/item-detail.component';
     ItemListComponent,
     ItemSingleComponent,
     ItemDetailComponent,
-    HeadComponent
+    HeadComponent,
+    ItemImagesComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [ItemService],
   bootstrap: [AppComponent]
